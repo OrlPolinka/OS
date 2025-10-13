@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstdlib>
+#include <unistd.h> // для getpid() и usleep()
+
+int main(int argc, char* argv[]) {
+    int iterations = 0;
+
+    if (argc > 1) {
+        iterations = std::atoi(argv[1]);
+    } else {
+        const char* envVar = std::getenv("ITER_NUM");
+        if (envVar != nullptr) {
+            iterations = std::atoi(envVar);
+        } else {
+            std::cerr << "Error: no number of iterations is specified" << std::endl;
+            return 1;
+        }
+    }
+
+    std::cout << "Number of iterations: " << iterations << std::endl;
+    pid_t pid = getpid();
+
+    for (int i = 0; i < iterations; ++i) {
+        std::cout << "Iteration " << (i + 1) << ", PID: " << pid << std::endl;
+        usleep(500000); // 500 ms
+    }
+
+    return 0;
+}

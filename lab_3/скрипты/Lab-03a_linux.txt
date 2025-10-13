@@ -1,0 +1,33 @@
+#include <iostream>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <cstdlib>
+
+int main() {
+    const char* path = "./Lab-03x";
+    const char* arg1 = "5";
+
+    pid_t pid1 = fork();
+    if (pid1 == 0) {
+        // Первый процесс: аргумент командной строки
+        execl(path, path, arg1, NULL);
+        std::cerr << "Error starting the first process" << std::endl;
+        exit(1);
+    }
+
+    pid_t pid2 = fork();
+    if (pid2 == 0) {
+        // Второй процесс: переменная окружения
+        setenv("ITER_NUM", "7", 1);
+        execl(path, path, NULL);
+        std::cerr << "Error starting the second process" << std::endl;
+        exit(1);
+    }
+
+    // Родитель ждёт завершения обоих
+    waitpid(pid1, NULL, 0);
+    waitpid(pid2, NULL, 0);
+
+    std::cout << "Both child processes are completed." << std::endl;
+    return 0;
+}

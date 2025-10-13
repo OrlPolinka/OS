@@ -1,0 +1,63 @@
+#include <windows.h>
+#include <iostream>
+#include <string>
+
+int main() {
+    STARTUPINFO si = { sizeof(si) };
+    PROCESS_INFORMATION pi[3];
+    BOOL success;
+    std::string exePath = "C:\\Users\\User-c121f4dd\\OS3\\Lab-03x.exe";
+    std::string arg = "5";
+
+    // 1. Всё в lpApplicationName
+    std::string full1 = exePath + " " + arg;
+    success = CreateProcess(
+        full1.c_str(), // ← всё в первом параметре
+        NULL,
+        NULL, NULL, FALSE, 0, NULL, NULL,
+        &si, &pi[0]);
+
+    if (!success) {
+        std::cerr << "Error when creating the process 1: " << GetLastError() << std::endl;
+    }
+
+    // 2. Всё в lpCommandLine
+    std::string full2 = exePath + " " + arg;
+    success = CreateProcess(
+        NULL,
+        (LPSTR)full2.c_str(), // ← всё во втором параметре
+        NULL, NULL, FALSE, 0, NULL, NULL,
+        &si, &pi[1]);
+
+    if (!success) {
+        std::cerr << "Error when creating the process 2: " << GetLastError() << std::endl;
+    }
+
+    // 3. Имя отдельно, аргументы отдельно
+    std::string arg3 = " " + arg; // ← пробел обязателен!
+    success = CreateProcess(
+        exePath.c_str(),       // ← только имя
+        (LPSTR)arg3.c_str(),   // ← только аргументы
+        NULL, NULL, FALSE, 0, NULL, NULL,
+        &si, &pi[2]);
+
+    if (!success) {
+        std::cerr << "Error when creating the process 3: " << GetLastError() << std::endl;
+    }
+
+    // Ожидание завершения всех процессов
+    HANDLE handles[3] = { pi[0].hProcess, pi[1].hProcess, pi[2].hProcess };
+    WaitForMultipleObjects(3, handles, TRUE, INFINITE);
+
+    // Очистка ресурсов
+    for (int i = 0; i < 3; ++i) {
+        CloseHandle(pi[i].hProcess);
+        CloseHandle(pi[i].hThread);
+    }
+
+    
+    std::cout << "Press child processes are completed." << std::endl;
+    std::cin.get();
+    std::cout << "All child processes are completed." << std::endl;
+    return 0;
+}
