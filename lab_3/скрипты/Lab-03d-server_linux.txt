@@ -1,0 +1,88 @@
+#include <iostream>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <vector>
+#include <sstream>
+#include <cstring>
+
+int main(int argc, char* argv[]) {
+    if (argc != 4) {
+        std::cerr << "Usage: Lab-03d-server <num_procs> <lower> <upper>" << std::endl;
+        return 1;
+    }
+
+    int numProcs = std::atoi(argv[1]);
+    int lower = std::atoi(argv[2]);
+    int upper = std::atoi(argv[3]);
+
+    if (numProcs <= 0 || lower > upper) {
+        std::cerr << "Invalid input." << std::endl;
+        return 1;
+    }
+
+    int rangeSize = (upper - lower + 1) / numProcs;
+    int remainder = (upper - lower + 1) % numProcs;
+
+    std::vector<pid_t> children;
+    std::vector<int> readFDs;
+
+    for (int i = 0; i < numProcs; ++i) {
+        int start = lower + i * rangeSize;
+        int end = start + rangeSize - 1;
+        if (i == numProcs - 1) end += remainder;
+
+        int pipefd[2];
+        if (pipe(pipefd) == -1) {
+            std::cerr << "Pipe creation failed." << std::endl;
+            continue;
+        }
+
+        pid_t pid = fork();
+        if (pid < 0) {
+            std::cerr << "Fork failed." << std::endl;
+            close(pipefd[0]);
+            close(pipefd[1]);
+            continue;
+        }
+
+        if (pid == 0) {
+            // Child
+            close(pipefd[0]); // Close read end
+            dup2(pipefd[1], STDOUT_FILENO); // Redirect stdout to pipe
+            close(pipefd[1]);
+
+            std::ostringstream cmd;
+            cmd << "./Lab-03d-client " << start << " " << end;
+            execl("/bin/sh", "sh", "-c", cmd.str().c_str(), NULL);
+
+            std::cerr << "Exec failed." << std::endl;
+            exit(1);
+        } else {
+            // Parent
+            close(pipefd[1]); // Close write end
+            children.push_back(pid);
+            readFDs.push_back(pipefd[0]);
+        }
+    }
+
+    // Read from pipes
+    for (size_t i = 0; i < readFDs.size(); ++i) {
+        char buffer[1024];
+        ssize_t bytes;
+        std::cout << "Процесс #" << i + 1 << " вернул: ";
+        while ((bytes = read(readFDs[i], buffer, sizeof(buffer) - 1)) > 0) {
+            buffer[bytes] = '\0';
+            std::cout << buffer;
+        }
+        std::cout << std::endl;
+        close(readFDs[i]);
+    }
+
+    // Wait for children
+    for (pid_t pid : children) {
+        waitpid(pid, NULL, 0);
+    }
+
+    std::cout << "Все дочерние процессы завершены." << std::endl;
+    return 0;
+}

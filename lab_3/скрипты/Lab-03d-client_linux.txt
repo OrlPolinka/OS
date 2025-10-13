@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cstdlib>
+#include <unistd.h>
+#include <vector>
+#include <sstream>
+
+bool isPrime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i * i <= n; ++i)
+        if (n % i == 0) return false;
+    return true;
+}
+
+int main(int argc, char* argv[]) {
+    if (argc != 3) {
+        std::cerr << "Usage: Lab-03d-client <lower> <upper>" << std::endl;
+        return 1;
+    }
+
+    int lower = std::atoi(argv[1]);
+    int upper = std::atoi(argv[2]);
+
+    if (lower > upper || lower < 0) {
+        std::cerr << "Invalid range." << std::endl;
+        return 1;
+    }
+
+    std::ostringstream buffer;
+    for (int i = lower; i <= upper; ++i)
+        if (isPrime(i)) buffer << i << " ";
+
+    std::string result = buffer.str();
+    write(STDOUT_FILENO, result.c_str(), result.size());
+
+    return 0;
+}
