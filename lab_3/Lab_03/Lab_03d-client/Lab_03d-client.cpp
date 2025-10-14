@@ -1,0 +1,75 @@
+﻿#include <windows.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <sstream>
+
+// Проверка, является ли число простым
+bool isPrime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i * i <= n; ++i)
+        if (n % i == 0) return false;
+    return true;
+}
+
+int main(int argc, char* argv[]) {
+    setlocale(LC_ALL, "ru");
+
+    if (argc != 3) {
+        std::cerr << "Usage: Lab-03d-client <lower> <upper>" << std::endl;
+        return 1;
+    }
+
+    int lower, upper;
+    try {
+        lower = std::stoi(argv[1]);
+        upper = std::stoi(argv[2]);
+    }
+    catch (...) {
+        std::cerr << "Invalid arguments. Must be integers." << std::endl;
+        return 1;
+    }
+
+    if (lower > upper || lower < 0) {
+        std::cerr << "Invalid range: lower must be <= upper and >= 0." << std::endl;
+        return 1;
+    }
+
+    // Получение дескриптора канала из стандартного вывода
+    HANDLE hPipe = GetStdHandle(STD_OUTPUT_HANDLE);
+    if (hPipe == INVALID_HANDLE_VALUE || hPipe == NULL) {
+        std::cerr << "Invalid pipe handle." << std::endl;
+        return 1;
+    }
+
+    // Поиск простых чисел
+    std::ostringstream buffer;
+    for (int i = lower; i <= upper; ++i) {
+        if (isPrime(i)) {
+            buffer << i << " ";
+        }
+    }
+
+    std::string result = buffer.str();
+    DWORD bytesWritten;
+
+    // Отправка данных по каналу
+    BOOL success = WriteFile(
+        hPipe,
+        result.c_str(),
+        static_cast<DWORD>(result.size()),
+        &bytesWritten,
+        NULL
+    );
+
+    if (!success) {
+        std::cerr << "Failed to write to pipe. Error: " << GetLastError() << std::endl;
+        return 1;
+    }
+
+    // Очистка
+    FlushFileBuffers(hPipe);
+    CloseHandle(hPipe);
+
+    return 0;
+}
