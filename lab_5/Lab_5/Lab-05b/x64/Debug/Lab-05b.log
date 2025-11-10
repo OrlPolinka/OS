@@ -1,0 +1,25 @@
+﻿Сборка начата 03.11.2025 21:11:36.
+Уровень детализации журнала: Normal.     1>Проект "C:\Users\user\Desktop\VS\ос\OS\lab_5\Lab_5\Lab-05b\Lab-05b.vcxproj" в узле 3 (целевые объекты Build).
+     1>PrepareForBuild:
+         Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
+       InitializeBuildStatus:
+         Создание "x64\Debug\Lab-05b.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
+         Обращение к "x64\Debug\Lab-05b.tlog\unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt "Lab-05b.cpp"
+         Lab-05b.cpp
+       Link:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\user\Desktop\VS\ос\OS\lab_5\Lab_5\x64\Debug\Lab-05b.exe" /INCREMENTAL /ILK:"x64\Debug\Lab-05b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\user\Desktop\VS\ос\OS\lab_5\Lab_5\x64\Debug\Lab-05b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\user\Desktop\VS\ос\OS\lab_5\Lab_5\x64\Debug\Lab-05b.lib" /MACHINE:X64 "x64\Debug\Lab-05b.obj"
+     1>LINK : fatal error LNK1201: Ошибка при записи в базу данных "C:\Users\user\Desktop\VS\ос\OS\lab_5\Lab_5\x64\Debug\Lab-05b.pdb" программы; возможно, не хватает места на диске, недопустимый путь или недостаточно прав
+     1>Сборка проекта "C:\Users\user\Desktop\VS\ос\OS\lab_5\Lab_5\Lab-05b\Lab-05b.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+       "C:\Users\user\Desktop\VS\ос\OS\lab_5\Lab_5\Lab-05b\Lab-05b.vcxproj" (целевой объект Build ) (1) ->
+       (Целевой объект Link) -> 
+         LINK : fatal error LNK1201: Ошибка при записи в базу данных "C:\Users\user\Desktop\VS\ос\OS\lab_5\Lab_5\x64\Debug\Lab-05b.pdb" программы; возможно, не хватает места на диске, недопустимый путь или недостаточно прав
+
+    Предупреждений: 0
+    Ошибок: 1
+
+Прошло времени 00:00:02.73

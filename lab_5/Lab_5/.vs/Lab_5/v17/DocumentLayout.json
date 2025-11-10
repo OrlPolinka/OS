@@ -1,0 +1,93 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5CEE876A-C9A1-406D-A87A-DCF12EE9AE0B}|Lab-05c\\Lab-05c.vcxproj|C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\Lab-05c\\Lab-05c.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5CEE876A-C9A1-406D-A87A-DCF12EE9AE0B}|Lab-05c\\Lab-05c.vcxproj|solutionrelative:Lab-05c\\Lab-05c.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5927A54B-1E27-4925-A7EA-66BA10AC8BCD}|Lab-05b\\Lab-05b.vcxproj|C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\Lab-05b\\Lab-05b.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5927A54B-1E27-4925-A7EA-66BA10AC8BCD}|Lab-05b\\Lab-05b.vcxproj|solutionrelative:Lab-05b\\Lab-05b.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE37A70E-1581-4E61-8EC0-3BF4F2667313}|Lab-05x\\Lab-05x.vcxproj|C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\Lab-05x\\Lab-05x.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CE37A70E-1581-4E61-8EC0-3BF4F2667313}|Lab-05x\\Lab-05x.vcxproj|solutionrelative:Lab-05x\\Lab-05x.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB8EF212-35F8-4E7A-80A9-D6AD8E5A379F}|Lab-05a\\Lab-05a.vcxproj|C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\Lab-05a\\Lab-05a.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AB8EF212-35F8-4E7A-80A9-D6AD8E5A379F}|Lab-05a\\Lab-05a.vcxproj|solutionrelative:Lab-05a\\Lab-05a.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Lab-05c.cpp",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\Lab-05c\\Lab-05c.cpp",
+              "RelativeDocumentMoniker": "Lab-05c\\Lab-05c.cpp",
+              "ToolTip": "C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\Lab-05c\\Lab-05c.cpp",
+              "RelativeToolTip": "Lab-05c\\Lab-05c.cpp",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAkwCwAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-03T18:11:04.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Lab-05b.cpp",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\Lab-05b\\Lab-05b.cpp",
+              "RelativeDocumentMoniker": "Lab-05b\\Lab-05b.cpp",
+              "ToolTip": "C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\Lab-05b\\Lab-05b.cpp",
+              "RelativeToolTip": "Lab-05b\\Lab-05b.cpp",
+              "ViewState": "AgIAACYAAAAAAAAAAAAkwC8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-03T16:52:11.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Lab-05x.cpp",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\Lab-05x\\Lab-05x.cpp",
+              "RelativeDocumentMoniker": "Lab-05x\\Lab-05x.cpp",
+              "ToolTip": "C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\Lab-05x\\Lab-05x.cpp",
+              "RelativeToolTip": "Lab-05x\\Lab-05x.cpp",
+              "ViewState": "AgIAABEAAAAAAAAAAAAkwCgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-03T16:34:31.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Lab-05a.cpp",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\Lab-05a\\Lab-05a.cpp",
+              "RelativeDocumentMoniker": "Lab-05a\\Lab-05a.cpp",
+              "ToolTip": "C:\\Users\\user\\Desktop\\VS\\\u043E\u0441\\OS\\lab_5\\Lab_5\\Lab-05a\\Lab-05a.cpp",
+              "RelativeToolTip": "Lab-05a\\Lab-05a.cpp",
+              "ViewState": "AgIAABAAAAAAAAAAAAAkwBoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-03T16:27:30.542Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
