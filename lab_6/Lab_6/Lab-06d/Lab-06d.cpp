@@ -79,14 +79,36 @@ int main(int argc, char* argv[]) {
     wchar_t cmdB[] = L"Lab-06d.exe childB";
 
     // Запуск дочернего процесса A
-    if (!CreateProcessW(nullptr, cmdA, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &piA)) {
+    if (!CreateProcessW(
+        nullptr,
+        cmdA,
+        nullptr,
+        nullptr,
+        FALSE,
+        CREATE_NEW_CONSOLE, 
+        nullptr,
+        nullptr,
+        &si,
+        &piA))
+    {
         std::cerr << "Ошибка запуска процесса A. Код ошибки: " << GetLastError() << "\n";
         CloseHandle(hEvent);
         return 1;
     }
 
     // Запуск дочернего процесса B
-    if (!CreateProcessW(nullptr, cmdB, nullptr, nullptr, FALSE, 0, nullptr, nullptr, &si, &piB)) {
+    if (!CreateProcessW(
+        nullptr,
+        cmdB,
+        nullptr,
+        nullptr,
+        FALSE,
+        CREATE_NEW_CONSOLE, 
+        nullptr,
+        nullptr,
+        &si,
+        &piB))
+    {
         std::cerr << "Ошибка запуска процесса B. Код ошибки: " << GetLastError() << "\n";
         TerminateProcess(piA.hProcess, 1);
         CloseHandle(piA.hProcess);
@@ -94,6 +116,7 @@ int main(int argc, char* argv[]) {
         CloseHandle(hEvent);
         return 1;
     }
+
 
     RunThread("Main", false);
 

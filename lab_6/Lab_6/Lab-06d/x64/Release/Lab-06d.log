@@ -1,4 +1,4 @@
-﻿Сборка начата 10.11.2025 17:47:23.
+﻿Сборка начата 18.11.2025 14:05:39.
 Уровень детализации журнала: Normal.     1>Проект "C:\Users\user\Desktop\VS\ос\OS\lab_6\Lab_6\Lab-06d\Lab-06d.vcxproj" в узле 2 (целевые объекты Build).
      1>PrepareForBuild:
          Структурированный вывод включен. Форматирование диагностики компилятора будет отражать иерархию ошибок. Подробнее см. https://aka.ms/cpp/structured-output.
@@ -11,7 +11,7 @@
        Link:
          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\bin\HostX64\x64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\user\Desktop\VS\ос\OS\lab_6\Lab_6\x64\Release\Lab-06d.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\user\Desktop\VS\ос\OS\lab_6\Lab_6\x64\Release\Lab-06d.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG:incremental /LTCGOUT:"x64\Release\Lab-06d.iobj" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\user\Desktop\VS\ос\OS\lab_6\Lab_6\x64\Release\Lab-06d.lib" /MACHINE:X64 "x64\Release\Lab-06d.obj"
          Создание кода
-         2 of 167 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
+         1 of 167 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
            0 functions were new in current compilation
            0 functions had inline decision re-evaluated but remain unchanged
          Создание кода завершено
@@ -25,4 +25,4 @@
     Предупреждений: 0
     Ошибок: 0
 
-Прошло времени 00:00:01.57
+Прошло времени 00:00:01.65
