@@ -13,6 +13,11 @@ x64/
 # Visual Studio files
 .vs/
 *.ipch
+*.pch
+*.obj
+*.exe
+*.dll
+*.zip
 *.VC.db
 *.opendb
 *.vcxproj.user
