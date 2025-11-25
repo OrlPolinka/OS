@@ -8,9 +8,13 @@ x64/
 *.dll
 *.lib
 *.pdb
+*.zip
 
 # Visual Studio files
 .vs/
+*.ipch
+*.VC.db
+*.opendb
 *.vcxproj.user
 *.suo
 *.user
