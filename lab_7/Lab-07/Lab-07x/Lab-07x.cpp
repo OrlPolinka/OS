@@ -40,6 +40,9 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    std::cout << "Программа работала " << runSeconds << " секунд." << std::endl;
+    QueryPerformanceCounter(&now);
+    double realElapsed = double(now.QuadPart - start.QuadPart) / freq.QuadPart;
+
+    std::cout << "Программа работала " << realElapsed << " секунд." << std::endl;
     return 0;
 }
